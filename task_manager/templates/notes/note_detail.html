@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{%block title %}Stick Notes - {{ note.title}}{% endblock %}
+
+{% block content %}
+<h2>{{note.title}}</h2>
+<p>{{ note.content }}</p>
+<p>Create at: {{ note.created_at }}</p>
+
+
+<div>
+    <a class="button" href="{% url 'note_update' pk=note.pk %}"><span>Update</span></a>
+</div>
+
+<div>
+    <a class="button" href="{% url 'note_delete' pk=note.pk %}"><span>Delete</span></a>
+</div>
+
+<div>
+    <a class="button" style="vertical-align:middle" href="{% url 'notes_list' %}"><span>Back</span></a>
+</div>
+{% endblock %}
+
+
+
